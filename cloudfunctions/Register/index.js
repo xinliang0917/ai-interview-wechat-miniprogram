@@ -14,10 +14,12 @@ exports.main = async (event, context) => {
   try {
     const {
       password,
-      account,
-      nickname,
+      account,   //账号
+      name,
       pic,
-      _openid
+      _openid,
+      age,
+      universitry,
     } = event
     // 查询用户是否存在
     const res = await db.collection("user").where({
@@ -38,7 +40,9 @@ exports.main = async (event, context) => {
         password: password,
         account: account,
         nickname: nickname,
-        pic: pic
+        pic: pic,
+        age: age,
+        universitry: universitry
       }
     })
 

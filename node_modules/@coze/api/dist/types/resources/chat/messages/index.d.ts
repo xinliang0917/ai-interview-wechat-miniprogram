@@ -1,0 +1,14 @@
+import { type ChatV3Message } from '../index';
+import { APIResource } from '../../resource';
+import { type RequestOptions } from '../../../core';
+export declare class Messages extends APIResource {
+    /**
+     * Get the list of messages in a chat. | 获取对话中的消息列表。
+     * @docs en:https://www.coze.com/docs/developer_guides/chat_message_list?_lang=en
+     * @docs zh:https://www.coze.cn/docs/developer_guides/chat_message_list?_lang=zh
+     * @param conversation_id - Required The ID of the conversation. | 会话 ID。
+     * @param chat_id - Required The ID of the chat. | 对话 ID。
+     * @returns An array of chat messages. | 对话消息数组。
+     */
+    list(conversation_id: string, chat_id: string, options?: RequestOptions): Promise<ChatV3Message[]>;
+}
