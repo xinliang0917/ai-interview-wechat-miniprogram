@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="top-bar">
+    <!-- 可根据需要添加标题等内容，这里先空出左边区域 -->
+    <view class="left-space"></view> 
+    <text class="countdown">倒计时: {{countdown}}</text>
+  </view>
+
+  <!-- 进度条 + 题目数 -->
+  <view class="progress-wrap">
+    <view class="progress-bar">
+      <view class="progress-inner" style="width: {{progressWidth}}"></view>
+    </view>
+    <view class="question-count">第 {{currentQuestion}} / 16 题</view>
+  </view>
+
+  <!-- 问题模块（边框拉长） -->
+  <view class="question-card">
+    <text class="question-text">这里是问题这里是问题这里是问题这里是问题这里是问题</text>
+  </view>
+
+  <!-- 上传文件模块（图标放入按钮内） -->
+  <view class="upload-wrap">
+    <button class="upload-btn" bindtap="uploadFile">
+      <image class="upload-icon" src="/images/wenjian.png"></image> <!-- 替换实际图片路径 -->
+      上传文件
+    </button>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="btn-group">
+    <button class="prev-btn" bindtap="prevQuestion" disabled="{{currentQuestion === 1}}">上一题</button>
+    <button class="next-btn" bindtap="nextQuestion" disabled="{{currentQuestion === 16}}">下一题</button>
+  </view>
+</view>
