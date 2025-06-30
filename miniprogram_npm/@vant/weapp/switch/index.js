@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:361e9c34dea7853fc1f2f908d2d8a45daedb2edcd92bb22ab330cf6b5a38826b
-size 1101
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+(0, component_1.VantComponent)({
+    field: true,
+    classes: ['node-class'],
+    props: {
+        checked: null,
+        loading: Boolean,
+        disabled: Boolean,
+        activeColor: String,
+        inactiveColor: String,
+        size: {
+            type: String,
+            value: '30',
+        },
+        activeValue: {
+            type: null,
+            value: true,
+        },
+        inactiveValue: {
+            type: null,
+            value: false,
+        },
+    },
+    methods: {
+        onClick: function () {
+            var _a = this.data, activeValue = _a.activeValue, inactiveValue = _a.inactiveValue, disabled = _a.disabled, loading = _a.loading;
+            if (disabled || loading) {
+                return;
+            }
+            var checked = this.data.checked === activeValue;
+            var value = checked ? inactiveValue : activeValue;
+            this.$emit('input', value);
+            this.$emit('change', value);
+        },
+    },
+});

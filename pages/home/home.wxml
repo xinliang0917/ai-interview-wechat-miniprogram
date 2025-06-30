@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0af52a1beedde6951a9749a29215b6da2e08fff7d519f36a5d7d6e955a325554
-size 1745
+<view class="page-container">
+<view>
+  <van-nav-bar
+    title="{{title}}"
+    fixed="{{true}}"
+    safe-area-inset-top="{{true}}"
+    style="height:{{navBarHeight}}px;padding-top:{{statusBarHeight}}px"
+  />
+</view>
+<view class="container">
+  <!-- 半透明遮罩层，覆盖除登录按钮外区域 -->
+  <view class="mask" wx:if="{{showMask}}"></view>
+  <view class="main-card">
+    <!-- 使用 image 标签替代背景图 -->
+    <image class="main-card-bg-image" src="/images/home-background.png" mode="aspectFill"></image>
+    <view class="card-content">
+      <view class="main-title">
+        <image class="title-image" src="/images/AI.png" mode="widthFix" />
+        <view class="line-container">
+          <image src="/images/line.png" class="line-image" mode="aspectFill" bindload="onImageLoaded"></image>
+        </view>
+        <text class="bold">立即体验</text>
+        <!-- 优化：为跳转按钮添加登录状态控制 -->
+        <van-button 
+          class="arrow-btn {{!isLoggedIn ? 'disabled-btn' : ''}}" 
+          round 
+          type="info" 
+          bindtap="gotoNextPage"
+          disabled="{{!isLoggedIn}}"
+        >
+          <text class="arrow">→</text>
+        </van-button>
+      </view>
+      <view class="desc">全方位诊断简历存在的问题</view>
+      <view class="desc">结合招聘市场趋势实时提供简历定制建议</view>
+    </view>
+  </view>
+  
+  <!-- 底部登录区域 -->
+  <view class="bottom-login" wx:if="{{!isLoggedIn}}">
+    <view class="login-tip">微信登录使用完整功能</view>
+    <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信快捷登录</button>
+  </view>
+</view>
+</view>

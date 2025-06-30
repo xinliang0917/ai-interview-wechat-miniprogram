@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:662f61df57b19935d79a43080b7e9ef16848832340a95bf3ddaa0431c4edc5d2
-size 270
+<van-transition
+  show="{{ show }}"
+  custom-class="van-overlay custom-class"
+  custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
+  duration="{{ duration }}"
+  bind:tap="onClick"
+  catch:touchmove="{{ lockScroll ? 'noop' : ''}}"
+>
+  <slot></slot>
+</van-transition>

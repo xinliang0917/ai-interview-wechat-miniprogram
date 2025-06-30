@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:063025d102306f4a961ab99df1ce2645228e2d974a5e35d66c1cbee03ca0373b
-size 559
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+  style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor, activeValue }) }}"
+  bind:tap="onClick"
+>
+  <view class="van-switch__node node-class">
+    <van-loading
+      wx:if="{{ loading }}"
+      color="{{ computed.loadingColor({ checked, activeColor, inactiveColor, activeValue }) }}"
+      custom-class="van-switch__loading"
+    />
+  </view>
+</view>

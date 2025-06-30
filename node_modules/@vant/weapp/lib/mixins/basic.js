@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50b6704d420273a1a3ef76147b34e68bf83ebb41d9f699ee3362df3ae2d96986
-size 980
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.basic = void 0;
+exports.basic = Behavior({
+    methods: {
+        $emit: function (name, detail, options) {
+            this.triggerEvent(name, detail, options);
+        },
+        set: function (data) {
+            this.setData(data);
+            return new Promise(function (resolve) { return wx.nextTick(resolve); });
+        },
+        // high performance setData
+        setView: function (data, callback) {
+            var _this = this;
+            var target = {};
+            var hasChange = false;
+            Object.keys(data).forEach(function (key) {
+                if (data[key] !== _this.data[key]) {
+                    target[key] = data[key];
+                    hasChange = true;
+                }
+            });
+            if (hasChange) {
+                return this.setData(target, callback);
+            }
+            return callback && callback();
+        },
+    },
+});

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f70af67d828db37656bbe7c554330cdc15ffc75babcbb1e395dea48adbfec9a
-size 261
+@import '../common/index.wxss';.van-panel{background:var(--panel-background-color,#fff)}.van-panel__header-value{color:var(--panel-header-value-color,#ee0a24)}.van-panel__footer{padding:var(--panel-footer-padding,8px 16px)}.van-panel__footer:empty{display:none}

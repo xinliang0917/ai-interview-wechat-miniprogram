@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48d87abe6d430fe45d7afc34a7f82260423c2994e0b1cb8b7b3d9ad6127a9fcd
-size 115
+@import '../common/index.wxss';.van-sticky{position:relative}.van-sticky-wrap--fixed{left:0;position:fixed;right:0}

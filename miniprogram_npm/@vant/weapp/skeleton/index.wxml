@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b21c8430bbf91161e81f57d9aef6ac149a2e77fecbf0d1e5020b2ec674332fa9
-size 839
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  wx:if="{{ loading }}"
+  class="custom-class {{ utils.bem('skeleton', [{animate}]) }}"
+>
+  <view
+    wx:if="{{ avatar }}"
+    class="avatar-class {{ utils.bem('skeleton__avatar', [avatarShape])}}"
+    style="{{ 'width:' + avatarSize + ';height:' + avatarSize }}"
+  />
+  <view class="{{ utils.bem('skeleton__content')}}">
+    <view
+      wx:if="{{ title }}"
+      class="title-class {{ utils.bem('skeleton__title') }}"
+      style="{{ 'width:' + titleWidth }}"
+    />
+    <view
+      wx:for="{{ rowArray }}"
+      wx:key="index"
+      wx:for-index="index"
+      class="row-class {{ utils.bem('skeleton__row') }}"
+      style="{{ 'width:' + (isArray ? rowWidth[index] : rowWidth) }}"
+    />
+  </view>
+</view>
+<view wx:else class="{{ utils.bem('skeleton__content')}}">
+  <slot />
+</view>

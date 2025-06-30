@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1d322000af8801983a0cf59e428a25910c9a8863504edaa051aea948b1bd472
-size 645
+interface NotifyOptions {
+    type?: 'primary' | 'success' | 'danger' | 'warning';
+    color?: string;
+    zIndex?: number;
+    top?: number;
+    message: string;
+    context?: any;
+    duration?: number;
+    selector?: string;
+    background?: string;
+    safeAreaInsetTop?: boolean;
+    onClick?: () => void;
+    onOpened?: () => void;
+    onClose?: () => void;
+}
+declare function Notify(options: NotifyOptions | string): any;
+declare namespace Notify {
+    var clear: (options?: NotifyOptions | undefined) => void;
+    var setDefaultOptions: (options: NotifyOptions) => void;
+    var resetDefaultOptions: () => void;
+}
+export default Notify;

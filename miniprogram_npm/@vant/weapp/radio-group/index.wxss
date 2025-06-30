@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b49a81b7b222650741d0080d1eb999e0bbbbc82adb81e8baf898cc242a90b4b
-size 88
+@import '../common/index.wxss';.van-radio-group--horizontal{display:flex;flex-wrap:wrap}

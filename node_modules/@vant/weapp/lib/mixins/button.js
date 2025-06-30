@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27e01dc13dbfda0e3794bb3aab2f2a92e8928f648a9bd9acafb1e920ec31cf52
-size 1783
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.button = void 0;
+var version_1 = require("../common/version");
+exports.button = Behavior({
+    externalClasses: ['hover-class'],
+    properties: {
+        id: String,
+        buttonId: String,
+        lang: String,
+        businessId: Number,
+        sessionFrom: String,
+        sendMessageTitle: String,
+        sendMessagePath: String,
+        sendMessageImg: String,
+        showMessageCard: Boolean,
+        appParameter: String,
+        ariaLabel: String,
+        openType: String,
+        getUserProfileDesc: String,
+    },
+    data: {
+        canIUseGetUserProfile: (0, version_1.canIUseGetUserProfile)(),
+    },
+    methods: {
+        onGetUserInfo: function (event) {
+            this.triggerEvent('getuserinfo', event.detail);
+        },
+        onContact: function (event) {
+            this.triggerEvent('contact', event.detail);
+        },
+        onGetPhoneNumber: function (event) {
+            this.triggerEvent('getphonenumber', event.detail);
+        },
+        onGetRealTimePhoneNumber: function (event) {
+            this.triggerEvent('getrealtimephonenumber', event.detail);
+        },
+        onError: function (event) {
+            this.triggerEvent('error', event.detail);
+        },
+        onLaunchApp: function (event) {
+            this.triggerEvent('launchapp', event.detail);
+        },
+        onOpenSetting: function (event) {
+            this.triggerEvent('opensetting', event.detail);
+        },
+        onAgreePrivacyAuthorization: function (event) {
+            this.triggerEvent('agreeprivacyauthorization', event.detail);
+        },
+        onChooseAvatar: function (event) {
+            this.triggerEvent('chooseavatar', event.detail);
+        },
+    },
+});

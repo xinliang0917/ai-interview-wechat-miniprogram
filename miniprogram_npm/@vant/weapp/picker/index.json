@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b50bd586bd1997a5f2ba6146a4e7edad3ef3a81c87841613759f997f5bef8a4c
-size 133
+{
+  "component": true,
+  "usingComponents": {
+    "picker-column": "../picker-column/index",
+    "loading": "../loading/index"
+  }
+}

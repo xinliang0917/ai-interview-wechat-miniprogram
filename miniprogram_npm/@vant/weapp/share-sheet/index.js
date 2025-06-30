@@ -1,3 +1,61 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b35121644a28b15cd63ab9dbd5b158685b0ed0a1981bc7039733bf050bc6823f
-size 1441
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+(0, component_1.VantComponent)({
+    props: {
+        // whether to show popup
+        show: Boolean,
+        // overlay custom style
+        overlayStyle: String,
+        // z-index
+        zIndex: {
+            type: Number,
+            value: 100,
+        },
+        title: String,
+        cancelText: {
+            type: String,
+            value: '取消',
+        },
+        description: String,
+        options: {
+            type: Array,
+            value: [],
+        },
+        overlay: {
+            type: Boolean,
+            value: true,
+        },
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: true,
+        },
+        closeOnClickOverlay: {
+            type: Boolean,
+            value: true,
+        },
+        duration: {
+            type: null,
+            value: 300,
+        },
+        rootPortal: {
+            type: Boolean,
+            value: false,
+        },
+    },
+    methods: {
+        onClickOverlay: function () {
+            this.$emit('click-overlay');
+        },
+        onCancel: function () {
+            this.onClose();
+            this.$emit('cancel');
+        },
+        onSelect: function (event) {
+            this.$emit('select', event.detail);
+        },
+        onClose: function () {
+            this.$emit('close');
+        },
+    },
+});

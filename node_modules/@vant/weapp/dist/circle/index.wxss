@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c894f0eb5431890c8f71ef9fc35223f753c9075dc01a5300c6c41d1293380a81
-size 228
+@import '../common/index.wxss';.van-circle{display:inline-block;position:relative;text-align:center}.van-circle__text{color:var(--circle-text-color,#323233);left:0;position:absolute;top:50%;transform:translateY(-50%);width:100%}

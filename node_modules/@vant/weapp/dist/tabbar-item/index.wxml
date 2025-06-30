@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5124673b49da6ebca9e56dd518b5e65241ae646669d0057eded7650870a81fd5
-size 711
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  class="{{ utils.bem('tabbar-item', { active }) }} custom-class"
+  style="color: {{ active ? activeColor : inactiveColor }}"
+  bindtap="onClick"
+>
+  <view class="van-tabbar-item__icon">
+    <van-icon
+      wx:if="{{ icon }}"
+      name="{{ icon }}"
+      class-prefix="{{ iconPrefix }}"
+      custom-class="van-tabbar-item__icon__inner"
+    />
+    <block wx:else>
+      <slot wx:if="{{ active }}" name="icon-active" />
+      <slot wx:else name="icon" />
+    </block>
+    <van-info
+      dot="{{ dot }}"
+      info="{{ info }}"
+      custom-class="van-tabbar-item__info"
+    />
+  </view>
+  <view class="van-tabbar-item__text">
+    <slot />
+  </view>
+</view>

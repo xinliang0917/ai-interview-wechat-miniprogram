@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3238dbbcb2317cf1d963031e56d806205a2e1beb1bd12e50d92c7067bf0a848c
-size 495
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.pickerProps = void 0;
+exports.pickerProps = {
+    title: String,
+    loading: Boolean,
+    showToolbar: Boolean,
+    cancelButtonText: {
+        type: String,
+        value: '取消',
+    },
+    confirmButtonText: {
+        type: String,
+        value: '确认',
+    },
+    visibleItemCount: {
+        type: Number,
+        value: 6,
+    },
+    itemHeight: {
+        type: Number,
+        value: 44,
+    },
+};

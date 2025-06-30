@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e23b3405da0516e6696a81ae57b9d3f2b8ad3dd80d920cab787816751e98fb3
-size 250
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  return style({
+    'padding-left': addUnit(data.gutter),
+  });
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+};

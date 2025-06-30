@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:613bd13d3e5c9f14d8f7db3a9d3e8093f4a7a36beb941e8732c69e02d8e60901
-size 584
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  class="{{ utils.bem('sidebar-item', { selected, disabled }) }} {{ selected ? 'active-class' : '' }} {{ disabled ? 'disabled-class' : '' }} custom-class"
+  hover-class="van-sidebar-item--hover"
+  hover-stay-time="70"
+  bind:tap="onClick"
+>
+  <view class="van-sidebar-item__text">
+    <van-info
+      wx:if="{{ badge != null || info !== null || dot }}"
+      dot="{{ dot }}"
+      info="{{ badge != null ? badge : info }}"
+    />
+    <view wx:if="{{ title }}">{{ title }}</view>
+    <slot wx:else name="title" />
+  </view>
+</view>

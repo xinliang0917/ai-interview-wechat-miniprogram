@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f143efa6f0ee4cfa3bbf15cbec3338949744d6574bd28938862a3893b3bcfdd4
-size 155
+<wxs src="./index.wxs" module="computed" />
+
+<view class="van-config-provider" style="{{ computed.mapThemeVarsToCSSVars(themeVars) }}">
+  <slot />
+</view>

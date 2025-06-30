@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1ab0adca0c2f76952370a4ccb32ff640c5e798f95464b2cdaec31f22018a80d
-size 1071
+<wxs src="../wxs/utils.wxs" module="utils" />
+<input
+  id="{{ name }}"
+  class="{{ utils.bem('field__control', [inputAlign, { disabled, error }]) }} input-class"
+  type="{{ type }}"
+  focus="{{ focus }}"
+  cursor="{{ cursor }}"
+  value="{{ innerValue }}"
+  auto-focus="{{ autoFocus }}"
+  disabled="{{ disabled || readonly }}"
+  maxlength="{{ maxlength }}"
+  placeholder="{{ placeholder }}"
+  placeholder-style="{{ placeholderStyle }}"
+  placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
+  confirm-type="{{ confirmType }}"
+  confirm-hold="{{ confirmHold }}"
+  hold-keyboard="{{ holdKeyboard }}"
+  cursor-spacing="{{ cursorSpacing }}"
+  adjust-position="{{ adjustPosition }}"
+  selection-end="{{ selectionEnd }}"
+  selection-start="{{ selectionStart }}"
+  always-embed="{{ alwaysEmbed }}"
+  password="{{ password || type === 'password' }}"
+  bindinput="onInput"
+  bindtap="onClickInput"
+  bindblur="onBlur"
+  bindfocus="onFocus"
+  bindconfirm="onConfirm"
+  bindkeyboardheightchange="onKeyboardHeightChange"
+  bindnicknamereview="onBindNicknameReview"
+/>

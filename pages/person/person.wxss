@@ -1,3 +1,210 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02ee8d96a2a06ec882b1694e87e84a95a2f95d3f39c65dc552af9e0f29a26386
-size 4018
+.van-nav-bar {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 180rpx;
+  justify-content: space-between;
+  background: linear-gradient(45deg, #FFF9C4, #D0F9F5, #FFF9C4) !important;
+  z-index: 1; 
+}
+
+.van-nav-bar__content {
+  margin: 0 auto;
+  width: 100%;
+  }
+  
+  .van-nav-bar__title{
+    color: #000;
+    text-align: center;
+    width: 100%;
+  }
+
+.container {
+  margin-top: 200rpx;
+    padding: 30px 16px;
+    background-color: #fff;
+  }
+
+  .container input {
+    margin-bottom: 20px;
+  }
+  
+  .header-new {
+    display: flex;
+    align-items: flex-start; /* 调整对齐方式 */
+    padding: 16rpx 0;
+    margin-bottom: 24rpx;
+  }
+  
+  .avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%; /* 确保头像为圆形 */
+    background-color: #ddd;
+    margin-right: 30rpx; /* 增加右侧间距，确保头像不被遮挡 */
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* 让右侧板块占据剩余空间 */
+    padding: 20px;
+  }
+
+  .name-input {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 12rpx;
+    color: black;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12rpx;
+  }
+  
+  .tag-item input {
+    background-color: #FEFBEA;
+    color: #666;
+    font-size: 24rpx;
+    padding: 6rpx 12rpx;
+    border-radius: 12rpx;
+    min-width: 100rpx;
+    box-sizing: border-box;
+  }
+  
+  .progress-box {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .progress-item {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .progress-text {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    color: #51C5A4;
+  }
+  
+  .progress-desc {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .resume-section {
+    margin-bottom: 20px;
+    border: 1px solid #eee; /* 添加模块边框 */
+    border-radius: 8px; /* 圆角 */
+    padding: 16px; /* 内部间距 */
+  }
+  
+  /* 新增的简历信息标题样式 */
+  .resume-title {
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  .title-text {
+    font-size: 32rpx; /* 比下方项目标题更大 */
+    font-weight: bold;
+    color: #333;
+    padding: 4rpx 12rpx;
+    background-color: #fff; /* 背景色与容器一致，形成悬浮效果 */
+    position: relative;
+    z-index: 1;
+  }
+  
+  .item {
+    margin-bottom: 16px;
+  }
+  
+  /* 项目行布局：左侧竖线 + 标题和图标组合 */
+  .item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  /* 左侧竖线样式 */
+  .vertical-line {
+    width: 4rpx;
+    height: 32rpx;
+    background-color: #51C5A4;
+    margin-right: 10rpx;
+  }
+  
+  /* 标题和编辑图标组合，实现左对齐 */
+  .title-group {
+    display: flex;
+    align-items: center;
+    gap: 10rpx;
+  }
+  
+  .item-label {
+    font-weight: bold;
+    font-size: 28rpx; /* 下方项目标题字体大小 */
+  }
+  
+  /* 编辑图标样式 */
+  .edit-icon {
+    width: 32rpx;
+    height: 32rpx;
+  }
+  
+  .item-value {
+    width: 100%;
+    color: #666;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 3px;
+    min-height: 60px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .save-btn,
+  .logout-btn {
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 36rpx;
+    width: 20%;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .save-btn {
+    background-color: #51C5A4;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+  }
+  
+  .add-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    background-color: #51C5A4;
+    border: none;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .content-item {
+    margin-bottom: 8px;
+  }

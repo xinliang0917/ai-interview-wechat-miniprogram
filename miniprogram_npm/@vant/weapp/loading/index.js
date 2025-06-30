@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c4a684cde45fc91096bd3ab38e0f0be6281290be24340a39c633888d76158eb
-size 430
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+(0, component_1.VantComponent)({
+    props: {
+        color: String,
+        vertical: Boolean,
+        type: {
+            type: String,
+            value: 'circular',
+        },
+        size: String,
+        textSize: String,
+    },
+    data: {
+        array12: Array.from({ length: 12 }),
+    },
+});

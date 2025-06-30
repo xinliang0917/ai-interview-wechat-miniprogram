@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d63ba0c3d23edf99c22f22c40044c8d249ac056aa920e23e2e0de33dc77105c
-size 76
+@import '../common/index.wxss';.van-sidebar{width:var(--sidebar-width,80px)}

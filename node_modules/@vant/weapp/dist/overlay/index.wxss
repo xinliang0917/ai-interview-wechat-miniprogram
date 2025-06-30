@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e55a81b7d83c9e9e9baed5e7b7b7d120420616ae48e2f141a7739f5eb80b5281
-size 159
+@import '../common/index.wxss';.van-overlay{background-color:var(--overlay-background-color,rgba(0,0,0,.7));height:100%;left:0;position:fixed;top:0;width:100%}

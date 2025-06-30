@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29db8ed539d79674f1f5da9359a18d6832311191cbfb21f178ab761399622678
-size 256
+@import '../common/index.wxss';:host{box-sizing:border-box;flex-shrink:0;width:100%}.van-tab__pane{-webkit-overflow-scrolling:touch;box-sizing:border-box;overflow-y:auto}.van-tab__pane--active{height:auto}.van-tab__pane--inactive{height:0;overflow:visible}

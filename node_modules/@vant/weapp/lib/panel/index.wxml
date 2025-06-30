@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9712760ae63dc973211f1c2c9f63acf88fb84ecc776a8f410e55c1f38febe7f
-size 473
+<view class="van-panel van-hairline--top-bottom custom-class">
+  <van-cell
+    wx:if="{{ title || desc || status }}"
+    title="{{ title }}"
+    label="{{ desc }}"
+    value="{{ status }}"
+    custom-class="header-class"
+    value-class="van-panel__header-value"
+  />
+  <slot wx:else name="header" />
+
+  <view class="van-panel__content">
+    <slot />
+  </view>
+
+  <view class="van-panel__footer van-hairline--top footer-class">
+    <slot name="footer" />
+  </view>
+</view>

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e091484ee53a1e002cf554edd514075276a7e42a6c7471e83d0ad2268ffbe349
-size 537
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+(0, component_1.VantComponent)({
+    classes: ['info-class'],
+    props: {
+        dot: Boolean,
+        info: null,
+        size: null,
+        color: String,
+        customStyle: String,
+        classPrefix: {
+            type: String,
+            value: 'van-icon',
+        },
+        name: String,
+    },
+    methods: {
+        onClick: function () {
+            this.$emit('click');
+        },
+    },
+});

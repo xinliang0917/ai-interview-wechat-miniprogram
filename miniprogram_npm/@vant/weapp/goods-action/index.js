@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f354dc3312a35309132ee54993d5016b5ef4935bc029894e490d36d7877dd2b3
-size 505
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+var relation_1 = require("../common/relation");
+(0, component_1.VantComponent)({
+    relation: (0, relation_1.useChildren)('goods-action-button', function () {
+        this.children.forEach(function (item) {
+            item.updateStyle();
+        });
+    }),
+    props: {
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: true,
+        },
+    },
+});

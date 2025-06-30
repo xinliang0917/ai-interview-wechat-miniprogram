@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcfa2ba161aa8ce341054048aab8482e51f079506cc9b6239b2a0c532686cb8e
-size 354
+export type TimeData = {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    milliseconds: number;
+};
+export declare function parseTimeData(time: number): TimeData;
+export declare function parseFormat(format: string, timeData: TimeData): string;
+export declare function isSameSecond(time1: number, time2: number): boolean;

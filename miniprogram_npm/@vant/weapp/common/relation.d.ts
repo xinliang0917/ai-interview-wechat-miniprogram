@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:669b7972f79581743dd3d35f900c8dbf6eaa740dcfb39f500c619e0235e27cb6
-size 568
+/// <reference types="miniprogram-api-typings" />
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+export declare function useParent(name: string, onEffect?: (this: TrivialInstance) => void): {
+    relations: {
+        [x: string]: WechatMiniprogram.Component.RelationOption;
+    };
+    mixin: string;
+};
+export declare function useChildren(name: string, onEffect?: (this: TrivialInstance, target: TrivialInstance) => void): {
+    relations: {
+        [x: string]: WechatMiniprogram.Component.RelationOption;
+    };
+    mixin: string;
+};
+export {};

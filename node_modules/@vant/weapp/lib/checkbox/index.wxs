@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5a108709fbd270c58a331ed1e96c7f58d0272fda5a77b0e4703dd57e3b534c2
-size 477
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function iconStyle(checkedColor, value, disabled, parentDisabled, iconSize) {
+  var styles = {
+    'font-size': addUnit(iconSize),
+  };
+
+  if (checkedColor && value && !disabled && !parentDisabled) {
+    styles['border-color'] = checkedColor;
+    styles['background-color'] = checkedColor;
+  }
+
+  return style(styles);
+}
+
+module.exports = {
+  iconStyle: iconStyle,
+};

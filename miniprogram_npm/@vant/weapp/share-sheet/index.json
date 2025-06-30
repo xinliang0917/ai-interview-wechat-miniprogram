@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b45265707023e2e58c29856068f0981a85685cf5d5855f4b5300051c50e65338
-size 114
+{
+  "component": true,
+  "usingComponents": {
+    "van-popup": "../popup/index",
+    "options": "./options"
+  }
+}

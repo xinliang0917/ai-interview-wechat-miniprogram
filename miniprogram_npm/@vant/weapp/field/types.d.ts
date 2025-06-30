@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20100fd8b6f6ecbe19e0bc3d075c9b9f2f776fffcc9b4b87831d3e32d9f87f84
-size 240
+export interface InputDetails {
+    /** 输入框内容 */
+    value: string;
+    /** 光标位置 */
+    cursor?: number;
+    /** keyCode 为键值 (目前工具还不支持返回keyCode参数) `2.1.0` 起支持 */
+    keyCode?: number;
+}

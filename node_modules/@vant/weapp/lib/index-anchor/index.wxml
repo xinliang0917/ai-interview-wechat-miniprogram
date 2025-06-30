@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a76149eabf8693a06520ff8a45c4c2816cde464d71f7af8ea661c4ca9b7ecb9
-size 327
+<view
+  class="van-index-anchor-wrapper"
+  style="{{ wrapperStyle }}"
+>
+  <view
+    class="van-index-anchor {{ active ? 'van-index-anchor--active van-hairline--bottom' : '' }}"
+    style="{{ anchorStyle }}"
+  >
+    <slot wx:if="{{ useSlot }}"/>
+    <block wx:else>
+      <text>{{ index }}</text>
+    </block>
+  </view>
+</view>

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:529857124d7968c6319180f3a1858acdbe4f899e1ab41ed3bcf7724ab76fa4c3
-size 157
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class {{ utils.bem('goods-action', { safe: safeAreaInsetBottom }) }}">
+  <slot />
+</view>

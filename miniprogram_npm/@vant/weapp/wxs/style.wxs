@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb8d3761a7e03c9957426f482cff9f59f2a8b47c4dc4e82822c6e3d6b2707c0d
-size 854
+/* eslint-disable */
+var object = require('./object.wxs');
+var array = require('./array.wxs');
+
+function kebabCase(word) {
+  var newWord = word
+    .replace(getRegExp("[A-Z]", 'g'), function (i) {
+      return '-' + i;
+    })
+    .toLowerCase()
+
+  return newWord;
+}
+
+function style(styles) {
+  if (array.isArray(styles)) {
+    return styles
+      .filter(function (item) {
+        return item != null && item !== '';
+      })
+      .map(function (item) {
+        return style(item);
+      })
+      .join(';');
+  }
+
+  if ('Object' === styles.constructor) {
+    return object
+      .keys(styles)
+      .filter(function (key) {
+        return styles[key] != null && styles[key] !== '';
+      })
+      .map(function (key) {
+        return [kebabCase(key), [styles[key]]].join(':');
+      })
+      .join(';');
+  }
+
+  return styles;
+}
+
+module.exports = style;

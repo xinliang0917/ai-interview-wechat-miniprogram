@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7863249df64872753f8d580f84a3ca1bdf984176e085ec043099ca5299111238
-size 359
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view class="custom-class van-sticky" style="{{ computed.containerStyle({ fixed, height, zIndex }) }}">
+  <view class="{{ utils.bem('sticky-wrap', { fixed }) }}" style="{{ computed.wrapStyle({ fixed, offsetTop, transform, zIndex }) }}">
+    <slot />
+  </view>
+</view>

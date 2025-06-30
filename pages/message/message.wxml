@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20c0e97553b1f2b89b9b361037d96fd8e0b1c764f63c5eef4c7dbbcb2b017e6e
-size 1031
+<view>
+  <van-nav-bar
+    title="{{title}}"
+    fixed="{{true}}"
+    safe-area-inset-top="{{true}}"
+    style="height:{{navBarHeight}}px;padding-top:{{statusBarHeight}}px"
+  />
+</view>
+<view class="match-list">
+  <view class="match-item" 
+        wx:for="{{matchList}}" 
+        wx:key="index"
+        bindtap="goToDetail"
+        data-index="{{index}}">
+    <!-- 左侧图标 + 岗位信息区域 -->
+    <view class="item-left">
+      <image class="item-icon" src="/images/icon-job.png"></image>
+      <view class="item-info">
+        <view class="job-title">
+          <text>{{item.jobName}}</text>
+          <image class="tag-image" src="{{item.tagImg}}" mode="aspectFit" wx:if="{{item.tagImg}}">tup</image>
+        </view>
+        <view class="date">{{item.date}}</view>
+      </view>
+    </view>
+    <!-- 右侧匹配度 -->
+    <view class="item-right">
+      <text class="match-text">匹配度   </text>
+      <text class="rate-number">{{item.matchValue}}</text>
+    </view>
+  </view>
+</view>

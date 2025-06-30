@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58dcde828a5de24e60ecfe864cc7f6e9aef3c86888fd305126eb3e3d756f9837
-size 1482
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VantComponent = void 0;
+var basic_1 = require("../mixins/basic");
+function mapKeys(source, target, map) {
+    Object.keys(map).forEach(function (key) {
+        if (source[key]) {
+            target[map[key]] = source[key];
+        }
+    });
+}
+function VantComponent(vantOptions) {
+    var options = {};
+    mapKeys(vantOptions, options, {
+        data: 'data',
+        props: 'properties',
+        watch: 'observers',
+        mixins: 'behaviors',
+        methods: 'methods',
+        beforeCreate: 'created',
+        created: 'attached',
+        mounted: 'ready',
+        destroyed: 'detached',
+        classes: 'externalClasses',
+    });
+    // add default externalClasses
+    options.externalClasses = options.externalClasses || [];
+    options.externalClasses.push('custom-class');
+    // add default behaviors
+    options.behaviors = options.behaviors || [];
+    options.behaviors.push(basic_1.basic);
+    // add relations
+    var relation = vantOptions.relation;
+    if (relation) {
+        options.relations = relation.relations;
+        options.behaviors.push(relation.mixin);
+    }
+    // map field to form-field behavior
+    if (vantOptions.field) {
+        options.behaviors.push('wx://form-field');
+    }
+    // add default options
+    options.options = {
+        multipleSlots: true,
+        addGlobalClass: true,
+    };
+    Component(options);
+}
+exports.VantComponent = VantComponent;

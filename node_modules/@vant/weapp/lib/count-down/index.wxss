@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:874f1fa13a561b1b596fa05f91c00b8c3588a3055f8e744675932dd8a4c9fdd2
-size 180
+@import '../common/index.wxss';.van-count-down{color:var(--count-down-text-color,#323233);font-size:var(--count-down-font-size,14px);line-height:var(--count-down-line-height,20px)}

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c57f51279f864016ad4c89ee52c700c2597376d00746ea27dfaeda57631e4f6b
-size 287
+@import '../common/index.wxss';.van-swipe-cell{overflow:hidden;position:relative}.van-swipe-cell__left,.van-swipe-cell__right{height:100%;position:absolute;top:0}.van-swipe-cell__left{left:0;transform:translate3d(-100%,0,0)}.van-swipe-cell__right{right:0;transform:translate3d(100%,0,0)}

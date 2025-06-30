@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee328cc180c1f1313e500f48faab30b6169ef9ae638fe69b9e30cc84d7c97da6
-size 1042
+<van-overlay
+  wx:if="{{ mask || forbidClick }}"
+  show="{{ show }}"
+  z-index="{{ zIndex }}"
+  custom-style="{{ mask ? '' : 'background-color: transparent;' }}"
+/>
+<van-transition
+  show="{{ show }}"
+  custom-style="z-index: {{ zIndex }}"
+  custom-class="van-toast__container"
+>
+  <view
+    class="van-toast van-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }} van-toast--{{ position }}"
+    catch:touchmove="noop"
+  >
+    <!-- text only -->
+    <text wx:if="{{ type === 'text' }}">{{ message }}</text>
+
+    <!-- html only -->
+    <rich-text wx:elif="{{ type === 'html' }}" nodes="{{ message }}"></rich-text>
+
+    <!-- with icon -->
+    <block wx:else>
+      <van-loading
+        wx:if="{{ type === 'loading' }}"
+        color="white"
+        type="{{ loadingType }}"
+        custom-class="van-toast__loading"
+      />
+      <van-icon wx:else class="van-toast__icon" name="{{ type }}" />
+      <text wx:if="{{ message }}" class="van-toast__text">{{ message }}</text>
+    </block>
+
+    <slot />
+  </view>
+</van-transition>
