@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e455f1ffac21f3f27f2a8b1032565f225bf0d6dd6a688c3e1cbbea726968b349
-size 227
+/* eslint-disable */
+var REGEXP = getRegExp('^-?\d+(\.\d+)?$');
+
+function addUnit(value) {
+  if (value == null) {
+    return undefined;
+  }
+
+  return REGEXP.test('' + value) ? value + 'px' : value;
+}
+
+module.exports = addUnit;

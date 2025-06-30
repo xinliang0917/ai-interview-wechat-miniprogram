@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c60f6199b4c707a0104036091ef5a71933722a7883b20242f8c6d8a4d789be6c
-size 164
+<import src="./overlay.wxml" />
+
+<root-portal wx:if="{{ rootPortal }}">
+  <include src="./overlay.wxml" />
+</root-portal>
+
+<include wx:else src="./overlay.wxml" />

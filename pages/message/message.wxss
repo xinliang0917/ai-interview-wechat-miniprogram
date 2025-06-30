@@ -1,3 +1,96 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d742d0a49c5167d64f3c26c74230aab8643b38c42c915d43ff560c5cbf60937
-size 1803
+.van-nav-bar {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 180rpx;
+  justify-content: space-between;
+  background: linear-gradient(45deg, #FFF9C4, #D0F9F5, #FFF9C4) !important;
+  z-index: 1; 
+}
+.van-nav-bar__content {
+  margin: 0 auto;
+  width: 100%;
+  }
+  
+  .van-nav-bar__title{
+    color: #000;
+    text-align: center;
+    width: 100%;
+  }
+/* 列表容器 */
+.match-list {
+    margin-top: 200rpx;
+    padding: 16rpx;
+  }
+  
+  /* 单个列表项 */
+  .match-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-radius: 12rpx;
+    padding: 16rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 左侧内容：图标 + 文字 */
+  .item-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 岗位图标 */
+  .item-icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 12rpx;
+  }
+  
+  /* 岗位信息区域 */
+  .item-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 岗位标题 + 标签 */
+  .job-title {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* 标签图片样式 */
+  .tag-image {
+    height: 30rpx;
+    width: auto;
+    margin-left: 8rpx;
+    vertical-align: middle;
+  }
+  
+  /* 日期样式 */
+  .date {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 4rpx;
+  }
+  
+  /* 右侧匹配度 */
+  .item-right {
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  
+  /* 匹配度文字样式：浅灰色 */
+  .match-text {
+    color: #999;
+  }
+  
+  /* 百分比数字样式：保持原绿色 */
+  .rate-number {
+    color: #51C5A4;
+  }

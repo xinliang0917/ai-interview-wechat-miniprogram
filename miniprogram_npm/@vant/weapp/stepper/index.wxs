@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd87416685a43dd8642474538fe696bcddf85541a568201bca4f470804a9fab7
-size 444
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function buttonStyle(data) {
+  return style({
+    width: addUnit(data.buttonSize),
+    height: addUnit(data.buttonSize),
+  });
+}
+
+function inputStyle(data) {
+  return style({
+    width: addUnit(data.inputWidth),
+    height: addUnit(data.buttonSize),
+  });
+}
+
+module.exports = {
+  buttonStyle: buttonStyle,
+  inputStyle: inputStyle,
+};

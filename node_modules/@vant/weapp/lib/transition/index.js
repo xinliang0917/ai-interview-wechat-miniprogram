@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd720b08580f44c67919bd273cae7bbe8ab50f099aba44e24f9f1917ae554256
-size 446
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+var transition_1 = require("../mixins/transition");
+(0, component_1.VantComponent)({
+    classes: [
+        'enter-class',
+        'enter-active-class',
+        'enter-to-class',
+        'leave-class',
+        'leave-active-class',
+        'leave-to-class',
+    ],
+    mixins: [(0, transition_1.transition)(true)],
+});

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cec0b4c7bea8e8007fcf43e8946477991f3ebc9845726b908281b7b2dc50069e
-size 649
+@import '../common/index.wxss';.van-rate{display:inline-flex;-webkit-user-select:none;user-select:none}.van-rate__item{padding:0 var(--rate-horizontal-padding,2px);position:relative}.van-rate__item:not(:last-child){padding-right:var(--rate-icon-gutter,4px)}.van-rate__icon{color:var(--rate-icon-void-color,#c8c9cc);display:block;font-size:var(--rate-icon-size,20px);height:100%}.van-rate__icon--half{left:var(--rate-horizontal-padding,2px);overflow:hidden;position:absolute;top:0;width:.5em}.van-rate__icon--full,.van-rate__icon--half{color:var(--rate-icon-full-color,#ee0a24)}.van-rate__icon--disabled{color:var(--rate-icon-disabled-color,#c8c9cc)}

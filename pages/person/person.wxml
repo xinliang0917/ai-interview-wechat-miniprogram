@@ -1,3 +1,99 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90c02d9ac7adc3716eab97c1df99ea4ca29a5ae6bb1f7be47f4399a94e065529
-size 4289
+ <view>
+  <van-nav-bar
+    title="{{title}}"
+    fixed="{{true}}"
+    safe-area-inset-top="{{true}}"
+    style="height:{{navBarHeight}}px;padding-top:{{statusBarHeight}}px"
+  />
+</view>
+<view class="container">
+  <!-- 头部信息 -->
+  <view class="header-new">
+    <image class="avatar" src="{{userInfo.avatarUrl || '/images/touxiang.png'}}" bindtap="chooseAvatar" mode="aspectFill" />
+    <view class="user-info">
+      <view class="name">
+        <input class="name-input" placeholder="请输入姓名" bindinput="onNameChange" value="{{name}}" />
+      </view>
+      <view class="tags">
+        <view class="tag-item" wx:for="{{baseInfos}}" wx:key="index">
+          <input 
+            class="tag-input" 
+            placeholder="{{['请输入学历', '请输入年龄', '请输入院校'][index]}}" 
+            bindinput="onBaseInfoChange" 
+            data-index="{{index}}" 
+            value="{{item}}" 
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度部分 -->
+  <view class="progress-box">
+    <view class="progress-item">
+      <text class="progress-text">{{analysisCount}}</text>
+      <text class="progress-desc">报告分析中</text>
+    </view>
+    <view class="progress-item">
+      <text class="progress-text">{{doneCount}}</text>
+      <text class="progress-desc">已完成</text>
+    </view>
+  </view>
+
+  <!-- 简历信息模块 - 新增标题和布局优化 -->
+  <view class="resume-section">
+    <!-- 简历信息标题 -->
+    <view class="resume-title">
+      <text class="title-text">简历信息</text>
+    </view>
+    
+    <!-- 所有项目统一使用居左对齐的布局 -->
+    <view class="item" wx:for="{{['求职期望', '个人优势', '获奖情况', '教育经历', '工作经历']}}" wx:key="item">
+      <view class="item-row">
+        <!-- 左侧竖线 -->
+        <view class="vertical-line"></view>
+        <!-- 标题和编辑图标作为一个整体居左 -->
+        <view class="title-group">
+          <view class="item-label">{{item}}</view>
+          <image class="edit-icon" src="/images/bianjiyou.png"></image>
+        </view>
+      </view>
+      
+      <!-- 内容区域 -->
+      <view wx:if="{{item === '求职期望'}}">
+        <textarea class="item-value" auto-height placeholder="请输入您的求职期望(例如:产品经理 8-9k 上海、广西、深圳)" bindinput="onExpectationChange" value="{{expectation}}" />
+      </view>
+      
+      <view wx:if="{{item === '个人优势'}}">
+        <textarea class="item-value" auto-height placeholder="请输入您的个人优势" bindinput="onAdvantageChange" value="{{advantage}}" />
+      </view>
+      
+      <view wx:if="{{item === '获奖情况'}}">
+        <view wx:for="{{awards}}" wx:key="index" class="content-item">
+          <textarea class="item-value" auto-height placeholder="请输入获奖内容(例如:xxx大赛 国家三等奖 2025.06.18)" bindinput="onAwardChange" data-index="{{index}}" value="{{item}}" />
+        </view>
+        <button class="add-btn" bindtap="addAward">添加获奖情况</button>
+      </view>
+      
+      <view wx:if="{{item === '教育经历'}}">
+        <view wx:for="{{educations}}" wx:key="index" class="content-item">
+          <textarea class="item-value" auto-height placeholder="请输入教育经历(例如: xxx学校 计算机科学与技术·硕士)" bindinput="onEducationChange" data-index="{{index}}" value="{{item}}" />
+        </view>
+        <button class="add-btn" bindtap="addEducation">添加教育经历</button>
+      </view>
+      
+      <view wx:if="{{item === '工作经历'}}">
+        <view wx:for="{{works}}" wx:key="index" class="content-item">
+          <textarea class="item-value" auto-height placeholder="请输入工作经历(例如:xxx公司 xxx岗位 工作x年)" bindinput="onWorkChange" data-index="{{index}}" value="{{item}}" />
+        </view>
+        <button class="add-btn" bindtap="addWork">添加工作经历</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="btn-group">
+    <button class="save-btn" bindtap="saveResume">保存</button>
+    <button class="logout-btn" bindtap="handleLogout">登出</button>
+  </view>
+</view>

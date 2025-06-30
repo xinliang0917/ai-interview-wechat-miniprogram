@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3d86534b17e28e8510f85ac712bc4cdadb43a14226512cd6612634deeb01087
-size 387
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="custom-class {{ utils.bem('tag', [type, size, { mark, plain, round }]) }}"
+  style="{{ computed.rootStyle({ plain, color, textColor }) }}"
+>
+  <slot />
+  <van-icon
+    wx:if="{{ closeable }}"
+    name="cross"
+    custom-class="van-tag__close"
+    bind:click="onClose"
+  />
+</view>

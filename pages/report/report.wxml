@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a944934e7b01aa477ba41df838131ccab93b4a8451d6796d52670be870fa9ad1
-size 1398
+<view class="container">
+  <view class="top-bar">
+    <view class="left-space"></view> 
+    <text class="countdown">
+      <text class="countdown-label">倒计时:   </text>
+      <text class="countdown-time">{{countdown}}</text>
+    </text>
+  </view>
+
+  <!-- 其余代码保持不变 -->
+  <view class="progress-wrap">
+    <view class="progress-bar">
+      <view class="progress-inner" style="width: {{progressWidth}}"></view>
+    </view>
+    <view class="question-count">第 {{currentQuestion}} / {{totalQuestions}} 题</view>
+  </view>
+
+  <view class="question-card">
+    <text class="question-text">{{questions[currentQuestion-1]}}</text>
+  </view>
+
+  <view class="upload-wrap">
+    <button class="upload-btn" bindtap="uploadFile">
+      <image class="upload-icon" src="/images/wenjian.png"></image>
+      {{fileUploaded ? '已上传文件' : '上传文件'}}
+    </button>
+    <!-- 显示已上传文件信息 -->
+    <view class="file-info" wx:if="{{fileInfo}}">
+      <text>已选择: {{fileInfo.name}}</text>
+    </view>
+  </view>
+
+  <view class="btn-group">
+    <button class="prev-btn" bindtap="prevQuestion" disabled="{{currentQuestion === 1}}">上一题</button>
+    <button class="next-btn" bindtap="nextQuestion" 
+            disabled="{{currentQuestion === totalQuestions || !fileUploaded}}">
+      下一题
+    </button>
+  </view>
+</view>    

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c57091ea461191ab97fb9c2c89990a62186bbe92a2674faf0c00874bdfc80015
-size 582
+@import '../common/index.wxss';.van-empty{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:32px 0}.van-empty__image{height:160px;width:160px}.van-empty__image:empty{display:none}.van-empty__image__img{height:100%;width:100%}.van-empty__image:not(:empty)+.van-empty__image{display:none}.van-empty__description{color:#969799;font-size:14px;line-height:20px;margin-top:16px;padding:0 60px}.van-empty__description:empty,.van-empty__description:not(:empty)+.van-empty__description{display:none}.van-empty__bottom{margin-top:24px}

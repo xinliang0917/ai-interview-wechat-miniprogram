@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cf29689ee2b2d0f94d191cf2febd0f8e337b6a730c5347a4a3db7431ad70c19
-size 397
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+
+function popupStyle(data) {
+  return style([
+    {
+      'z-index': data.zIndex,
+      '-webkit-transition-duration': data.currentDuration + 'ms',
+      'transition-duration': data.currentDuration + 'ms',
+    },
+    data.display ? null : 'display: none',
+    data.customStyle,
+  ]);
+}
+
+module.exports = {
+  popupStyle: popupStyle,
+};

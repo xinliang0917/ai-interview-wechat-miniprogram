@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab9859ff51edb01f167d085673ccb554346234ce607ddd5aa2f6b753a4cfb8c2
-size 297
+.van-ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.van-multi-ellipsis--l2{-webkit-line-clamp:2}.van-multi-ellipsis--l2,.van-multi-ellipsis--l3{-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden;text-overflow:ellipsis}.van-multi-ellipsis--l3{-webkit-line-clamp:3}

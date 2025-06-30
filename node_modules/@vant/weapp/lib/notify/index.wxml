@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae1120e8ee36ad08997c42c97db331da8bffe5326a3577f74e75fb7ab2524cd3
-size 545
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<van-transition
+  name="slide-down"
+  show="{{ show }}"
+  custom-class="van-notify__container"
+  custom-style="{{ computed.rootStyle({ zIndex, top }) }}"
+  bind:tap="onTap"
+>
+  <view
+    class="van-notify van-notify--{{ type }}"
+    style="{{ computed.notifyStyle({ background, color }) }}"
+  >
+    <view
+      wx:if="{{ safeAreaInsetTop }}"
+      style="height: {{ statusBarHeight }}px"
+    />
+    <text>{{ message }}</text>
+  </view>
+</van-transition>

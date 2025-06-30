@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d48c2d697f652c9949e54b7bb54de7ff8b55e5fbc3bb53010e03308559e36ff2
-size 747
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.link = void 0;
+exports.link = Behavior({
+    properties: {
+        url: String,
+        linkType: {
+            type: String,
+            value: 'navigateTo',
+        },
+    },
+    methods: {
+        jumpLink: function (urlKey) {
+            if (urlKey === void 0) { urlKey = 'url'; }
+            var url = this.data[urlKey];
+            if (url) {
+                if (this.data.linkType === 'navigateTo' &&
+                    getCurrentPages().length > 9) {
+                    wx.redirectTo({ url: url });
+                }
+                else {
+                    wx[this.data.linkType]({ url: url });
+                }
+            }
+        },
+    },
+});

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01a53be66efb6ca7f2455c867e6242b3b86f04b65a3c0aaa65604a92638f254f
-size 167
+/* eslint-disable */
+function displayColumns(columns, columnsNum) {
+  return columns.slice(0, +columnsNum);
+}
+
+module.exports = {
+  displayColumns: displayColumns,
+};

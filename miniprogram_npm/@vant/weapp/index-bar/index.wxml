@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12abf7307ba15b44013de333d3f3de62e07d97061ccfb449806b318179e5af81
-size 530
+<view class="van-index-bar">
+  <slot />
+
+  <view
+    wx:if="{{ showSidebar }}"
+    class="van-index-bar__sidebar"
+    catch:tap="onClick"
+    catch:touchmove="onTouchMove"
+    catch:touchend="onTouchStop"
+    catch:touchcancel="onTouchStop"
+  >
+    <view
+      wx:for="{{ indexList }}"
+      wx:key="index"
+      class="van-index-bar__index"
+      style="z-index: {{ zIndex + 1 }}; color: {{ activeAnchorIndex === index ? highlightColor : '' }}"
+      data-index="{{ index }}"
+    >
+      {{ item }}
+    </view>
+  </view>
+</view>

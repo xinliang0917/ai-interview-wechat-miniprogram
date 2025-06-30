@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c66f1442ce6a64d602ff538a74cdba1ed68922154aaa9bf35f5cc075b2ec086
-size 228
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  wx:if="{{ info !== null && info !== '' || dot }}"
+  class="van-info {{ utils.bem('info', { dot }) }} custom-class"
+  style="{{ customStyle }}"
+>{{ dot ? '' : info }}</view>

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f04821a7d92f7d0ac37350cc6447b6953e7fdd6d38ca1f1a7fe138901a27317
-size 385
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GRAY_DARK = exports.GRAY = exports.ORANGE = exports.GREEN = exports.WHITE = exports.BLUE = exports.RED = void 0;
+exports.RED = '#ee0a24';
+exports.BLUE = '#1989fa';
+exports.WHITE = '#fff';
+exports.GREEN = '#07c160';
+exports.ORANGE = '#ff976a';
+exports.GRAY = '#323233';
+exports.GRAY_DARK = '#969799';

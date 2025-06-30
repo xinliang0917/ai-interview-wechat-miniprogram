@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df9d91912cd42ae9ec5ea6058b2dcabc6388da3ffc277f3beda38c61076f8a58
-size 30
+{
+  "usingComponents": {
+  }
+}

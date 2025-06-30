@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:babafa54699698444f172a97a49ebf794920e98eaf9b0131799a995ed8ff2f00
-size 249
+/* eslint-disable */
+var REGEXP = getRegExp('{|}|"', 'g');
+
+function keys(obj) {
+  return JSON.stringify(obj)
+    .replace(REGEXP, '')
+    .split(',')
+    .map(function(item) {
+      return item.split(':')[0];
+    });
+}
+
+module.exports.keys = keys;

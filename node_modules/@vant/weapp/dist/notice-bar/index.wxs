@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5febf8c028f1b9acc24b23a1f34e021dfdd49c1db492a8390258aa9400763d93
-size 310
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  return style({
+    color: data.color,
+    'background-color': data.backgroundColor,
+    background: data.background,
+  });
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+};

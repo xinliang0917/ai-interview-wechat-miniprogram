@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3e79f729e0283da894b68a755748c307ddb3034c0c438968ca61b12844bfaa4
-size 618
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
+
+<view
+  class="van-progress custom-class"
+  style="{{ computed.rootStyle({ strokeWidth, trackColor }) }}"
+>
+  <view
+    class="van-progress__portion"
+    style="{{ computed.portionStyle({ percentage, inactive, color }) }}"
+  >
+    <view
+      wx:if="{{ showPivot && computed.pivotText(pivotText, percentage) }}"
+      style="{{ computed.pivotStyle({ textColor, pivotColor, inactive, color, right }) }}"
+      class="van-progress__pivot"
+    >
+      {{ computed.pivotText(pivotText, percentage) }}
+    </view>
+  </view>
+</view>

@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48f858e8979775b783d6e4600d6c90c23eac2e29b3e70d05a4144140ddce95d9
-size 1179
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/message/message",
+    "pages/person/person",
+    "pages/logs/logs",
+    "pages/report/report",
+    "pages/seeing/seeing"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "van-loading": "@vant/weapp/loading/index",
+    "van-progress": "@vant/weapp/progress/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "报告",
+        "iconPath": "/images/message.png",
+        "selectedIconPath": "/images/message-active.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath": "/images/person.png",
+        "selectedIconPath": "/images/person-active.png"
+      }
+    ]
+  }
+}

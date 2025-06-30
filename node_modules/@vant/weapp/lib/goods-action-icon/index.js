@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:08adb4126f7fe0df65e13fc6a2ce1d036bc4a6f7ab5c94a07e6b4ae185f31128
-size 791
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+var button_1 = require("../mixins/button");
+var link_1 = require("../mixins/link");
+(0, component_1.VantComponent)({
+    classes: ['icon-class', 'text-class', 'info-class'],
+    mixins: [link_1.link, button_1.button],
+    props: {
+        text: String,
+        dot: Boolean,
+        info: String,
+        icon: String,
+        size: String,
+        color: String,
+        classPrefix: {
+            type: String,
+            value: 'van-icon',
+        },
+        disabled: Boolean,
+        loading: Boolean,
+    },
+    methods: {
+        onClick: function (event) {
+            this.$emit('click', event.detail);
+            this.jumpLink();
+        },
+    },
+});

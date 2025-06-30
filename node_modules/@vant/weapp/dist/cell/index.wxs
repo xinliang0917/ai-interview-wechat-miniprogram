@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1f605a06fc8bd2aee3ebde2431401524b891e57a4fc0a614e7a38dbc5a79051
-size 335
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function titleStyle(data) {
+  return style([
+    {
+      'max-width': addUnit(data.titleWidth),
+      'min-width': addUnit(data.titleWidth),
+    },
+    data.titleStyle,
+  ]);
+}
+
+module.exports = {
+  titleStyle: titleStyle,
+};

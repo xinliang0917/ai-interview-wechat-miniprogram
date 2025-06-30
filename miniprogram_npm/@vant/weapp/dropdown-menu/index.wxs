@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51870cdc21cb80726f68c76e5345a3ff0d5b09292e2ab70df4f00e76d89d70c7
-size 331
+/* eslint-disable */
+function displayTitle(item) {
+  if (item.title) {
+    return item.title;
+  }
+
+  var match = item.options.filter(function(option) {
+    return option.value === item.value;
+  });
+  var displayTitle = match.length ? match[0].text : '';
+  return displayTitle;
+}
+
+module.exports = {
+  displayTitle: displayTitle
+};

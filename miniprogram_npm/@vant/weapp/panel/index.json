@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dab01248db05e9c773e301d68bd423bfe62cbbf52c8373fecfe0104d71ace68
-size 84
+{
+  "component": true,
+  "usingComponents": {
+    "van-cell": "../cell/index"
+  }
+}

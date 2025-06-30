@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb473f5f8511bdb09f3f819268b7d820025b2be5988376b83a79d90cea94ddb3
-size 123
+{
+  "component": true,
+  "usingComponents": {
+    "van-icon": "../icon/index",
+    "van-loading": "../loading/index"
+  }
+}

@@ -1,3 +1,68 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b4350da0888bc6da955d9e8a4009fc686ca1ec54ef9fd7f88903164450f533f
-size 2382
+<!-- pages/ability/ability.wxml -->
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="card user-info">
+    <image class="avatar" src="{{userInfo.avatarUrl || '/images/touxiang.png'}}" mode="aspectFill" />
+    <view class="user-right">
+      <view class="user-basic">
+        <text class="user-name">张三</text> 
+        <view class="user-tags">
+          <text class="tag">本科</text>
+          <text class="tag">21岁</text>
+          <text class="tag">深圳大学</text>
+        </view>
+      </view>
+      <!-- 用于显示线条的 view -->
+      <view class="divider-line"></view> 
+      <view class="job-expectation">
+        <text class="title">求职期望</text>
+        <text class="content1">产品经理 10-12K</text>
+        <text class="content2">深圳、广州、杭州</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 竞争力分析 -->
+  <view class="card">
+    <view class="section-title">竞争力分析</view>
+    <view class="placeholder">
+      <ec-canvas id="radarChart" canvas-id="radarCanvas" ec="{{ec}}"></ec-canvas>
+    </view>
+  </view>
+
+  <!-- 各项能力（图片图标版本） -->
+  <block wx:for="{{abilities}}" wx:key="title">
+    <view class="card ability-card">
+      <view class="ability-title">
+        <!-- 图片图标组件，添加加载失败处理 -->
+        <image 
+          src="{{item.icon}}" 
+          class="ability-icon" 
+          mode="aspectFit"
+          binderror="onImageError"
+          data-index="{{index}}"
+        ></image>
+        <text>{{item.title}}</text>
+      </view>
+      <view class="progress-label"> 
+        <text>一般</text><text>良好</text><text>优秀</text><text>极好</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress" style="width: {{item.progress}}"></view>
+      </view>
+      <view class="suggestion-module">
+        <text class="suggest-title">改进建议</text>
+        <text class="suggest-content">{{item.suggestion}}</text>
+      </view>
+    </view>
+  </block>
+
+  <!-- 总体建议 -->
+  <view class="card">
+    <view class="section-title">总体改进建议</view>
+    <view class="suggest-list" wx:for="{{summarySuggestions}}" wx:key="index">
+      <text class="bullet">·</text> 
+      <text class="suggest-text">{{item}}</text>
+    </view>
+  </view>
+</view>

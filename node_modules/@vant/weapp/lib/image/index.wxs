@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8f3dc4193fbd26b02a7cb8676f1ce67f99efcc08de25d1cac182694e54f89e7
-size 610
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function rootStyle(data) {
+  return style([
+    {
+      width: addUnit(data.width),
+      height: addUnit(data.height),
+      'border-radius': addUnit(data.radius),
+    },
+    data.radius ? 'overflow: hidden' : null,
+  ]);
+}
+
+var FIT_MODE_MAP = {
+  none: 'center',
+  fill: 'scaleToFill',
+  cover: 'aspectFill',
+  contain: 'aspectFit',
+  widthFix: 'widthFix',
+  heightFix: 'heightFix',
+};
+
+function mode(fit) {
+  return FIT_MODE_MAP[fit];
+}
+
+module.exports = {
+  rootStyle: rootStyle,
+  mode: mode,
+};

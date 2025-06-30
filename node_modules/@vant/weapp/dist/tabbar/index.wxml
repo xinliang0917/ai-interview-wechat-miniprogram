@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86032642e51202439fcc515cb07389035e37964e3f9d0494e7ae6d61706cf6fc
-size 341
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  class="{{ border ? 'van-hairline--top-bottom' : '' }} {{ utils.bem('tabbar', { fixed, safe: safeAreaInsetBottom }) }} custom-class"
+  style="{{ zIndex ? 'z-index: ' + zIndex : '' }}"
+>
+  <slot />
+</view>
+
+<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;"></view>

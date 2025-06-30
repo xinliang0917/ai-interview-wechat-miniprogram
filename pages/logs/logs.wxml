@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4ca0cc28c3a54fbba91b4d12d8c77c621c06938ea1c73194c05d48d8a1d54d5
-size 224
+<!--logs.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <view class="log-item">{{index + 1}}. {{log.date}}</view>
+  </block>
+</scroll-view>

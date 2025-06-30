@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b8f55a26d1b7a0dbccc0d5d32e6a7a224b496159788a1cd7ba516ecdf2ca1fd
-size 284
+/* eslint-disable */
+var PRESETS = ['error', 'search', 'default', 'network'];
+
+function imageUrl(image) {
+  if (PRESETS.indexOf(image) !== -1) {
+    return 'https://img.yzcdn.cn/vant/empty-image-' + image + '.png';
+  }
+
+  return image;
+}
+
+module.exports = {
+  imageUrl: imageUrl,
+};
+

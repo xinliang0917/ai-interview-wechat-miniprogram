@@ -1,3 +1,59 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3644eeede3cfe347b0694d940c1ca47089fa54743403143c3dc81159d3660c66
-size 1201
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.textareaProps = exports.inputProps = exports.commonProps = void 0;
+exports.commonProps = {
+    value: String,
+    placeholder: String,
+    placeholderStyle: String,
+    placeholderClass: String,
+    disabled: Boolean,
+    maxlength: {
+        type: Number,
+        value: -1,
+    },
+    cursorSpacing: {
+        type: Number,
+        value: 50,
+    },
+    autoFocus: Boolean,
+    focus: Boolean,
+    cursor: {
+        type: Number,
+        value: -1,
+    },
+    selectionStart: {
+        type: Number,
+        value: -1,
+    },
+    selectionEnd: {
+        type: Number,
+        value: -1,
+    },
+    adjustPosition: {
+        type: Boolean,
+        value: true,
+    },
+    holdKeyboard: Boolean,
+};
+exports.inputProps = {
+    type: {
+        type: String,
+        value: 'text',
+    },
+    password: Boolean,
+    confirmType: String,
+    confirmHold: Boolean,
+    alwaysEmbed: Boolean,
+};
+exports.textareaProps = {
+    autoHeight: Boolean,
+    fixed: Boolean,
+    showConfirmBar: {
+        type: Boolean,
+        value: true,
+    },
+    disableDefaultPadding: {
+        type: Boolean,
+        value: true,
+    },
+};

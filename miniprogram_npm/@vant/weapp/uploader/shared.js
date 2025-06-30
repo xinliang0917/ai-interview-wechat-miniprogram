@@ -1,3 +1,68 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e1da4da643f5b66cf69430abc94a0c65ba83a70408f29b38048b7d69aca7480a
-size 1345
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.messageFileProps = exports.mediaProps = exports.videoProps = exports.imageProps = void 0;
+// props for image
+exports.imageProps = {
+    sizeType: {
+        type: Array,
+        value: ['original', 'compressed'],
+    },
+    capture: {
+        type: Array,
+        value: ['album', 'camera'],
+    },
+    showmenu: {
+        type: Boolean,
+        value: true,
+    },
+};
+// props for video
+exports.videoProps = {
+    capture: {
+        type: Array,
+        value: ['album', 'camera'],
+    },
+    compressed: {
+        type: Boolean,
+        value: true,
+    },
+    maxDuration: {
+        type: Number,
+        value: 60,
+    },
+    camera: {
+        type: String,
+        value: 'back',
+    },
+    referrerPolicy: {
+        type: String,
+        value: 'no-referrer',
+    },
+};
+// props for media
+exports.mediaProps = {
+    capture: {
+        type: Array,
+        value: ['album', 'camera'],
+    },
+    mediaType: {
+        type: Array,
+        value: ['image', 'video', 'mix'],
+    },
+    maxDuration: {
+        type: Number,
+        value: 60,
+    },
+    camera: {
+        type: String,
+        value: 'back',
+    },
+};
+// props for file
+exports.messageFileProps = {
+    extension: null,
+    previewFile: {
+        type: Boolean,
+        value: true,
+    },
+};

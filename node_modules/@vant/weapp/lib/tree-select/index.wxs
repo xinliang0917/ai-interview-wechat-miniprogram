@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb0d237b53e83df60d6c5bb74106b794380d455ed22dd3455762e0643a9e5714
-size 259
+/* eslint-disable */
+var array = require('../wxs/array.wxs');
+
+function isActive (activeList, itemId) {
+  if (array.isArray(activeList)) {
+    return activeList.indexOf(itemId) > -1;
+  }
+
+  return activeList === itemId;
+}
+
+module.exports.isActive = isActive;

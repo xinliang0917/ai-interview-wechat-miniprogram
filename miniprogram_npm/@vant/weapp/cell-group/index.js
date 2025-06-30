@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a45430694670bd99735273c1a9c5724cbd53b9ffabc0dc25975a63681657fc7
-size 312
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var component_1 = require("../common/component");
+(0, component_1.VantComponent)({
+    props: {
+        title: String,
+        border: {
+            type: Boolean,
+            value: true,
+        },
+        inset: Boolean,
+    },
+});

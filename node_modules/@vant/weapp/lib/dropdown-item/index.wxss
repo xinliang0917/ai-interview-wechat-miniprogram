@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb93260d280397c9b1ee9d925ec592b6ac3028633ad096086c9b712cb84a7cb1
-size 437
+@import '../common/index.wxss';.van-dropdown-item{left:0;overflow:hidden;position:fixed;right:0}.van-dropdown-item__option{text-align:left}.van-dropdown-item__option--active .van-dropdown-item__icon,.van-dropdown-item__option--active .van-dropdown-item__title{color:var(--dropdown-menu-option-active-color,#ee0a24)}.van-dropdown-item--up{top:0}.van-dropdown-item--down{bottom:0}.van-dropdown-item__icon{display:block;line-height:inherit}

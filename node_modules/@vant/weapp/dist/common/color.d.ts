@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de4c7c9853b0a854b887aad5eae501493884f1066740e2fa6997f86e18fb5a94
-size 278
+export declare const RED = "#ee0a24";
+export declare const BLUE = "#1989fa";
+export declare const WHITE = "#fff";
+export declare const GREEN = "#07c160";
+export declare const ORANGE = "#ff976a";
+export declare const GRAY = "#323233";
+export declare const GRAY_DARK = "#969799";

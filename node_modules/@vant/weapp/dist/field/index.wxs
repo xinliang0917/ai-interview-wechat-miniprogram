@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc0015a787b854637bc5f6b05154bc7959f4e40ebe1cbf984421e8552c368cf5
-size 390
+/* eslint-disable */
+var style = require('../wxs/style.wxs');
+var addUnit = require('../wxs/add-unit.wxs');
+
+function inputStyle(autosize) {
+  if (autosize && autosize.constructor === 'Object') {
+    return style({
+      'min-height': addUnit(autosize.minHeight),
+      'max-height': addUnit(autosize.maxHeight),
+    });
+  }
+
+  return '';
+}
+
+module.exports = {
+  inputStyle: inputStyle,
+};
